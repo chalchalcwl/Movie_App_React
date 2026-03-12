@@ -1,0 +1,20 @@
+import { ActionType } from "../../action/action-type";
+
+const initialState = {
+
+    movies: [],
+    movie: {}
+}
+
+
+export const movieReducer = (state = initialState, { type, payload }) => {
+    switch (type) {
+        case ActionType.FETCH_MOVIES:
+            return {...initialState, movie: payload };
+        case ActionType.SELECT_MOVIE:
+            return {...initialState, movie: payload };
+        default:
+            return state;
+
+    }
+}
